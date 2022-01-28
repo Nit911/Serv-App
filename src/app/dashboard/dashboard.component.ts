@@ -15,8 +15,8 @@ export class DashboardComponent implements OnInit {
   }
 
   logout(){
-    this.dataService.logged
+    localStorage.removeItem('token')
+    this.dataService.logged()
     this.route.navigate(['/Login'])
   }
-
 }

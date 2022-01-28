@@ -10,13 +10,13 @@ import { DataService } from './data.service';
 export class AppComponent {
   title = 'Serv-App';
 
-  constructor(  private router : Router, public dataService : DataService ) {}
+  constructor(  private route : Router, public dataService : DataService ) {}
 
   ngOnInit(): void {};
 
   logout(){
     localStorage.removeItem('token')
     this.dataService.logged()
-    this.router.navigate(['/Login'])
+    this.route.navigate(['/Login'])
   }
 }
