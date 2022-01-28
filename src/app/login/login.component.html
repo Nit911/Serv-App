@@ -1,0 +1,21 @@
+<div class="container-fluid">
+    <form [formGroup]="stdForm" (ngSubmit)="Login()" class="mt-2">
+        <h3>Login</h3>
+        <div class="col-md-6 mb-2">
+            <label for="email">Enter Email Id</label>
+            <input type="text" class="form-control" formControlName="email">
+            <!-- <div *ngIf="stdForm.controls['email'].invalid && (stdForm.controls['email'].dirty || stdForm.controls['email'].touched)" class="alert">
+                            <div *ngIf="stdForm.controls['email'].errors.required">
+                                Please enter email
+                            </div>
+                        </div> -->
+        </div>
+        <div class="col-md-6 mb-2">
+            <label for="Password">Enter Password</label>
+            <input type="password" class="form-control" formControlName="password">
+        </div>
+        <div class="col-md-6 mb-2">
+            <input type="submit" class="btn btn-dark" value="Login">
+        </div>
+    </form>
+</div>

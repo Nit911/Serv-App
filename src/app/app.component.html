@@ -1,0 +1,24 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" routerLink="Login">Service Application</a>
+    <button class="navbar-toggler" type="button">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse">
+      <div class="navbar-nav text-white">
+        <a class="nav-link" current="Login" routerLink="Login"  *ngIf="!dataService.logged()" >Login</a>
+        <a class="nav-link" routerLink="Register"  *ngIf="!dataService.logged()" >Registration</a>
+        <a class="nav-link" routerLink="Events">Events</a>
+        <a class="nav-link" routerLink="Dashboard"  *ngIf="dataService.logged()" >Dashboard</a>
+        <a class="nav-link" (click)="logout()"  *ngIf="dataService.logged()" >Log Out</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="container-fluid">
+  <router-outlet></router-outlet>
+</div>
+
+
+<!-- *ngIf="!dataService.logged()" -->

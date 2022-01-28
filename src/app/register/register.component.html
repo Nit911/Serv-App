@@ -1,0 +1,38 @@
+<form #stdForm="ngForm" (ngSubmit)="onSubmit(stdForm.value)" class="m-3 p-3">
+    <H3>Registration</H3>
+    <div class="col-md-6 mb-2">
+        <label for="Name">Enter Name</label>
+        <input type="text" class="form-control" #stdNameRef="ngModel" required minlength="5" placeholder="Your Name" name="Name" ngModel>
+        <div *ngIf="stdNameRef.errors && ( stdNameRef.touched || stdNameRef.dirty )" class="text-danger">
+            <small [hidden]="!stdNameRef.errors?.['required']">Name is required</small>
+            <small [hidden]="!stdNameRef.errors?.['minlength']">Name should be atleast 5 characters</small>
+        </div>
+    </div>
+    <div class="col-md-6 mb-2">
+        <label for="email">Enter Email Id</label>
+        <input type="text" class="form-control" #stdEmailRef="ngModel" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" placeholder="email@example.com" name="Email" ngModel>
+        <div *ngIf="stdEmailRef.errors && ( stdEmailRef.touched || stdEmailRef.dirty )" class="text-danger">
+            <small [hidden]="!stdEmailRef.errors?.['required']">Email Id is required</small>
+            <small [hidden]="!stdEmailRef.errors?.['pattern']">Email should be in proper format</small>
+        </div>
+    </div>
+    <div class="col-md-6 mb-2">
+        <label for="Password">Enter Password</label>
+        <input type="password" class="form-control" #stdPassRef="ngModel" required minlength="4" placeholder="........" name="Password" ngModel>
+        <div *ngIf="stdPassRef.errors && ( stdPassRef.touched || stdPassRef.dirty )" class="text-danger">
+            <small [hidden]="!stdPassRef.errors?.['required']">Password is required</small>
+            <small [hidden]="!stdPassRef.errors?.['minlength']">Password should be atleast 4 characters</small>
+        </div>
+    </div>
+    <div class="col-md-6 mb-2">
+        <label for="City">Enter City</label>
+        <input type="text" class="form-control" #stdCityRef="ngModel" required minlength="4" placeholder="Your City" name="City" ngModel>
+        <div *ngIf="stdCityRef.errors && ( stdCityRef.touched || stdCityRef.dirty )" class="text-danger">
+            <small [hidden]="!stdCityRef.errors?.['required']">City is required</small>
+            <small [hidden]="!stdCityRef.errors?.['minlength']">City should be atleast 4 characters</small>
+        </div>
+    </div>
+    <div class="col-md-6 mb-2">
+        <input type="submit" class="btn btn-dark" value="Register">
+    </div>
+</form>
