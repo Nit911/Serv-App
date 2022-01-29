@@ -16,11 +16,11 @@ export class DataService {
 
   public eventData = "./assets/events.json"
 
-  //public eventsUrl = 'https://github.com/Nit911/Serv-App/blob/main/src/assets/events.json'
+  public eventsUrl = 'https://github.com/Nit911/Serv-App/blob/main/src/assets/events.json'
 
   public specialEventsData = "../assets/specialevents.json"
 
-  specialEventsUrl = ""
+  specialEventsUrl = "https://github.com/Nit911/Serv-App/blob/main/src/assets/specialEvents.json"
 
   constructor( private http : HttpClient ) { }
 
