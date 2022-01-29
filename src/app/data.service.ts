@@ -8,14 +8,19 @@ import { HttpClient } from '@angular/common/http';
 
 export class DataService {
 
-  public usersUrl = 'https://jsonplaceholder.typicode.com/users'
+  public usersUrl = "https://jsonplaceholder.typicode.com/users"
 
-  public userData = '../assets/users.json'
+  public userData = "../assets/users.json"
 
   public login : boolean = false
 
-  public eventData = '../assets/events.json'
-  public specialEventsData = '../assets/specialevents.json'
+  public eventData = "./assets/events.json"
+
+  //public eventsUrl = 'https://github.com/Nit911/Serv-App/blob/main/src/assets/events.json'
+
+  public specialEventsData = "../assets/specialevents.json"
+
+  specialEventsUrl = ""
 
   constructor( private http : HttpClient ) { }
 
@@ -42,7 +47,15 @@ export class DataService {
     return this.eventData
   }
 
+  // getEventsData(){
+  //   return this.http.get(this.eventsUrl)
+  // }
+
   getSpecialEventsData(){
     return this.specialEventsData
   }
+
+  // getSpecialEventsData(){
+  //   return this.http.get(specialEventsUrl)
+  // }
 }

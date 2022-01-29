@@ -1,66 +1,31 @@
-<div class="container-fluid">
-    <div class="col-12 my-5">
-        <h1 class="text" style="color: rgb(80, 80, 80);">Events Details</h1>
-    </div>
-    <div class="container-fluid border mb-3">
-        <div class="container-fluid">
-            <div class="row mt-1">
-                <div class="form-group col-sm-4">
-                    <label for="event1"><b>Special Event-1</b></label><br/>
-                    <textarea rows="3" id="event1">This is the description for the event to be conducted</textarea><br/>
-                    <input type="button" class="btn btn-secondary" value="Book Tickets">
-                </div>
-                <div class="form-group col-sm-4">
-                    <label for="event1"><b>Special Event-2</b></label><br/>
-                    <textarea rows="3" id="event1">This is the description for the event to be conducted</textarea><br/>
-                    <input type="button" class="btn btn-secondary" value="Book Tickets">
-                </div>
-                <div class="form-group col-sm-4">
-                    <label for="event1"><b>Special Event-3</b></label><br/>
-                    <textarea rows="3" id="event1">This is the description for the event to be conducted</textarea><br/>
-                    <input type="button" class="btn btn-secondary" value="Book Tickets">
-                </div>
-            </div>
-                <div class="row mt-1">
-                    <div class="form-group col-sm-4">
-                        <label for="event1"><b>Special Event-4</b></label><br/>
-                        <textarea rows="3" id="event1">This is the description for the event to be conducted</textarea><br/>
-                        <input type="button" class="btn btn-secondary" value="Book Tickets">
+
+<div class="border">
+    <div class="container-fluid mt-3" *ngFor="let specialEvent of specialEvents, let i = index" >
+                <div class="row">
+                    <div class="col-sm-3">
+                      <div class="card  bg-secondary text-white">
+                        <div class="card-header text-center">
+                            Event {{i+1}}
+                          </div>
+                        <div class="card-body text-center">
+                          <h5 class="card-title">{{specialEvent.name}}</h5>
+                          <p class="card-text">{{specialEvent.Discription}}</p>
+                          <a href="#" class="btn btn-success">My Tickets Details</a>
+                        </div>
+                        <div class="card-footer text-center">
+                            {{ specialEvent.createdDate | date:'longDate' }} 
+                        </div>
+                      </div>
                     </div>
-                    <div class="form-group col-sm-4">
-                        <label for="event1"><b>Special Event-5</b></label><br/>
-                        <textarea rows="3" id="event1">This is the description for the event to be conducted</textarea><br/>
-                        <input type="button" class="btn btn-secondary" value="Book Tickets">
-                    </div>
-                    <div class="form-group col-sm-4">
-                        <label for="event1"><b>Special Event-6</b></label><br/>
-                        <textarea rows="3" id="event1">This is the description for the event to be conducted</textarea><br/>
-                        <input type="button"class="btn btn-secondary"  value="Book Tickets">
-                    </div>
+                  </div>
                 </div>
             </div>
-            <div class="row mt-1">
-                <div class="form-group col-sm-4">
-                    <label for="event1"><b>Special Event-7</b></label><br/>
-                    <textarea rows="3" id="event1">This is the description for the event to be conducted</textarea><br/>
-                    <input type="button" class="btn btn-secondary" value="Book Tickets">
-                </div>
-                <div class="form-group col-sm-4">
-                    <label for="event1"><b>Special Event-8</b></label><br/>
-                    <textarea rows="3" id="event1">This is the description for the event to be conducted</textarea><br/>
-                    <input type="button" class="btn btn-secondary" value="Book Tickets">
-                </div>
-                <div class="form-group col-sm-4">
-                    <label for="event1"><b>Special Event-9</b></label><br/>
-                    <textarea rows="3" id="event1">This is the description for the event to be conducted</textarea><br/>
-                    <input type="button" class="btn btn-secondary" value="Book Tickets">
-                </div>
+            <div class="form-group form-check col-sm-8">
+                <input type="button" class="btn btn-dark" (click)="button()" value="Testing">
             </div>
-                <div class="form-group mt-3 mb-3 col-12">
-                    <label for="additional">Additional Information</label><br>
-                    <textarea class="form-control col-12" type="text" id="additional" rows="3"></textarea>
-                </div>
-            </div>
-            <input type="button" class="btn btn-dark" value="Logout" (click)="logout()">
-        </div>
+
+
+<div>
+    <input type="button" class="btn btn-dark" value="Logout" (click)="logout()">
+</div>
         
