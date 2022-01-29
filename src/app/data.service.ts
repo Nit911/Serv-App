@@ -14,6 +14,9 @@ export class DataService {
 
   public login : boolean = false
 
+  public eventData = '../assets/events.json'
+  public specialEventsData = '../assets/specialevents.json'
+
   constructor( private http : HttpClient ) { }
 
   getData(){
@@ -33,5 +36,13 @@ export class DataService {
     if(localStorage.getItem('token')){
       return !this.login
     }
+  }
+
+  getEventsData(){
+    return this.eventData
+  }
+
+  getSpecialEventsData(){
+    return this.specialEventsData
   }
 }

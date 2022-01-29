@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-event',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EventComponent implements OnInit {
 
-  constructor() { }
+  constructor( private dataService : DataService) { }
+
+  events : any
 
   ngOnInit(): void {
+    // this.events = this.dataService.getEventsData()
+    //this.dataService.getEventsData().subscribe(( data : any ) => this.events = data)
+
+  } 
+  button(){
+    console.log(this.events)
   }
 
 }
