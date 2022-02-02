@@ -3,7 +3,8 @@
     <div class="container-fluid mt-3" *ngFor="let specialEvent of specialEvents, let i = index" >
                 <div class="row">
                     <div class="col-sm-3">
-                      <div class="card  bg-secondary text-white">
+                      <div class="card-group">
+                        <div class="card  bg-secondary text-white">
                         <div class="card-header text-center">
                             Event {{i+1}}
                           </div>
@@ -15,6 +16,7 @@
                         <div class="card-footer text-center">
                             {{ specialEvent.createdDate | date:'longDate' }} 
                         </div>
+                      </div>
                       </div>
                     </div>
                   </div>
